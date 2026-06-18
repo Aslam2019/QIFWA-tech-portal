@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QIFAW TECHNOLOGIES - Empowering Business Growth</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">QIFAW TECHNOLOGIES</div>
+            
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </div>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#services">SaaS Development</a>
+                        <a href="#services">Custom Software</a>
+                        <a href="#services">Automation Systems</a>
+                        <a href="#services">Cloud Solutions</a>
+                    </div>
+                </li>
+                
+                <li><a href="#products">Products</a></li>
+                
+                <li class="dropdown">
+                    <a href="#careers" class="dropbtn">Careers <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content" id="careerDropdown">
+                        <button id="openInternships">🎓 Internship</button>
+                        <button id="openJobs">🚀 Full-Time Job</button>
+                    </div>
+                </li>
+                
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content anim-fade-up">
+            <h1>Transforming Ideas Into Technology</h1>
+            <p>At Qifaw Technologies, we believe that every business, regardless of its size, deserves access to modern technology solutions that simplify operations and unlock new opportunities. Our mission is to bridge the gap between traditional business practices and digital transformation by developing practical, scalable, and affordable software solutions.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c');">
+        <div class="section-overlay"></div>
+        <div class="about-container-wrapper">
+            <div class="about-content-box anim-left">
+                <h2>Who We Are</h2>
+                <p>Qifaw Technologies is a technology-driven software company committed to transforming the way small and medium-sized businesses operate.</p>
+                <div class="mission-vision-box">
+                    <p><strong>Our Mission:</strong> To create and deliver innovative technology solutions that simplify business operations, automate processes, improve productivity, and enable businesses to achieve sustainable growth.</p>
+                    <p><strong>Our Vision:</strong> To become a trusted technology partner for businesses worldwide by building intelligent software products and digital solutions that empower organizations to operate more efficiently, make better decisions, and scale confidently.</p>
+                </div>
+            </div>
+            <div class="about-stats-box anim-right">
+                <div class="stat-card"><h3>10+</h3><p>Projects</p></div>
+                <div class="stat-card"><h3>25+</h3><p>Clients</p></div>
+                <div class="stat-card"><h3>10+</h3><p>Experts</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa');">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up">
+            <h2>Our Services</h2>
+            <div class="grid-container">
+                <div class="card-item"><h3>SaaS Product Development</h3><p>Building diverse portfolios of SaaS products to address common operational challenges.</p></div>
+                <div class="card-item"><h3>Custom Software Development</h3><p>Tailored technology solutions designed, deployed, and maintained to align with business goals.</p></div>
+                <div class="card-item"><h3>Business Process Automation</h3><p>Implementing intelligent automation systems to eliminate inefficiencies and streamline workflows.</p></div>
+                <div class="card-item"><h3>Cloud & API Solutions</h3><p>Secure cloud infrastructure setup combined with robust API development.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up">
+            <h2>Our Products</h2>
+            <div class="grid-container">
+                <div class="card-item"><i class="fas fa-store"></i><h3>Retail & Food Tech</h3><p>Advanced digital platforms for Retail Management and Restaurant technology.</p></div>
+                <div class="card-item"><i class="fas fa-users-gear"></i><h3>Business Automation & CRM</h3><p>Intelligent Customer Relationship Management and core automation systems.</p></div>
+                <div class="card-item"><i class="fas fa-boxes-stacked"></i><h3>Inventory & E-commerce</h3><p>Smart Inventory Management tracking combined with corporate E-commerce solutions.</p></div>
+                <div class="card-item"><i class="fas fa-brain"></i><h3>AI & Workforce</h3><p>Next-generation Artificial Intelligence applications and advanced management tools.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200');">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up">
+            <h2>Join Our Team 🚀</h2>
+            <p class="career-subtitle" style="color: #cbd5e1; margin-bottom: 30px;">
+                Build intelligent software products and digital solutions with QIFAW TECHNOLOGIES.
+            </p>
+            <div class="career-portal-buttons">
+                <button class="portal-btn" id="openInternships">👉 Explore Internships</button>
+                <button class="portal-btn" id="openJobs">👉 Explore Full-Time Jobs</button>
+            </div>
+            
+            <div class="benefits" style="margin-top: 50px;">
+                <h3 style="color: #38bdf8; margin-bottom: 20px;">Our Core Values.</h3>
+                <ul style="max-width: 450px; margin: 0 auto; text-align: left; list-style: none;">
+                    <li style="margin: 10px 0; font-size: 16px; color: #e2e8f0;">💡 <strong>Innovation</strong> - Continuously exploring emerging technologies.</li>
+                    <li style="margin: 10px 0; font-size: 16px; color: #e2e8f0;">🤝 <strong>Customer Success</strong> - Measured by the success of our users.</li>
+                    <li style="margin: 10px 0; font-size: 16px; color: #e2e8f0;">✨ <strong>Integrity</strong> - Transparency and professionalism in every interaction.</li>
+                    <li style="margin: 10px 0; font-size: 16px; color: #e2e8f0;">🎯 <strong>Quality</strong> - Exceptional user experiences and high-quality software.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1423662055902-3e6e7e6426a4?w=1200');">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up">
+            <h2>Contact Us</h2>
+            <div class="contact-flex-wrapper">
+                <div class="contact-left-info">
+                    <h3>QIFAW TECHNOLOGIES</h3>
+                    <p style="color: #cbd5e1;">We are a technology-driven software company committed to transforming the way small and medium-sized businesses operate. We are building solutions that empower businesses to achieve their next level of success.</p>
+                    <p class="tagline" style="color: #38bdf8; font-style: italic; font-weight: 600; margin-top: 15px;">
+                        "Empowering Business Growth Through Innovation and Technology." 
+                    </p>
+                </div>
+                <div class="contact-right-cards">
+                    <div class="c-box" style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);"><i class="fas fa-envelope"></i><div><h4>Email</h4><p style="color: #cbd5e1;">hr@qifawtechnologies.com</p></div></div>
+                    <div class="c-box" style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);"><i class="fas fa-location-dot"></i><div><h4>Location</h4><p style="color: #cbd5e1;">Trichy, Tamil Nadu</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="careerPortalModal" class="career-portal-overlay">
+        <div class="portal-box">
+            <span class="close-portal" id="closePortal">&times;</span>
+            <h2 id="portalTypeTitle">Opportunities</h2>
+            
+            <div class="portal-job-list" id="portalJobList"></div>
+        </div>
+    </div>
+
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalJobTitle">Application Form</h2>
+            <div id="jobRequirements" class="job-req-box"></div>
+            
+            <form id="careerForm">
+                <input type="hidden" id="hiddenJobInput" value="">
+                
+                <input type="text" id="candName" placeholder="Full Name" required>
+                <input type="email" id="candEmail" placeholder="Email Address" required>
+                <input type="tel" id="candPhone" placeholder="Phone Number" required>
+                
+                <input type="file" id="resumeFileInput" accept=".pdf,.doc,.docx" required>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <footer><p>© 2026 QIFAW TECHNOLOGIES. All Rights Reserved.</p></footer>
+
+    <script>
+        const dbProducts = [
+            {% if db_products %}
+                {% for p in db_products %}
+                    { title: "{{ p[0] }}", desc: "{{ p[1] }}", type: "{{ p[2] }}" },
+                {% endfor %}
+            {% endif %}
+        ];
+    </script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
