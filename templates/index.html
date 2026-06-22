@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* 🌟 லைட்/டார்க் எந்த மோடு மாறினாலும் பேனர் மற்றும் போட்டோக்கள் கட் ஆகாமல் இருக்க பக்கா குளோபல் ஸ்டைல் */
         .hero, .bg-photo-section {
-            background-size: 100% 100% !important; 
-            background-position: center top !important; 
+            background-size: 100% 100% !important;
+            background-position: center top !important;
             background-repeat: no-repeat !important;
         }
-        /* 🌟 லைட் மோடு மாறும்போது எழுத்துக்கள் கருப்பாகவும், டார்க் மோடுல வெள்ளையாகவும் தானாக மாற சூப்பர் ட்ரிக் */
-        .brand-text-qifaw {
-            font-size: 24px; 
-            font-weight: 800; 
-            color: #ffffff; /* Default Dark Mode */
-            letter-spacing: 1px; 
+        
+        /* 🌟 லைட் மோடு மற்றும் டார்க் மோடுக்கு ஏற்ப பிராண்டிங் டெக்ஸ்ட் தானாகவே கலர் மாற CSS */
+        .brand-text-main {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            color: var(--text-color, #ffffff); /* லைட் மோடுக்கு பிளாக் / டார்க் மோடுக்கு ஒயிட் என தானாக மாறும் */
+            transition: color 0.3s ease;
         }
-        /* லைட் மோடு ஆக்டிவ் ஆகும்போது பாடி அல்லது நேவ்பாரில் வர்ற கிளாஸை வச்சு டெக்ஸ்ட் கலரை மாற்றுதல் */
-        body.light-mode .brand-text-qifaw, .light-mode .brand-text-qifaw {
-            color: #0f172a !important; /* லைட் மோடுல நல்லா டார்க்கா தெரியும் தம்பி */
+        
+        .brand-text-sub {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #38bdf8; /* பிராண்டிங் நீல நிறம் எப்போதும் தெளிவாகத் தெரியும் */
         }
     </style>
 </head>
@@ -32,15 +37,15 @@
     <header>
         <div class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
             
-            <!-- 🌟 [மாற்றப்பட்டது]: லைட் மோடுக்கும் செட் ஆகுற மாதிரி லோகோ கன்டெய்னர் மற்றும் பிராண்டிங் டெக்ஸ்ட் -->
+            <!-- 🌟 [மாற்றப்பட்டது]: லைட் மோடு மற்றும் டார்க் மோடு இரண்டிலும் தெளிவாகத் தெரியும் பிராண்டிங் டெக்ஸ்ட் பகுதி -->
             <div class="logo" style="display: flex; align-items: center; gap: 12px; max-height: none !important; height: auto !important;">
                 <div style="background: rgba(255, 255, 255, 0.95); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); overflow: hidden;">
                     <img src="/static/logo.jpg" alt="QIFAW Logo" style="width: 85%; height: 85%; object-fit: contain;" onerror="this.src='https://images2.imgbox.com/0f/32/MEniG0Xl_o.jpg'">
                 </div>
                 <div style="display: flex; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.1;">
-                    <!-- இன்-லைன் கலருக்குப் பதிலா கிளாஸ் பயன்படுத்தப்பட்டுள்ளது தம்பி -->
-                    <span class="brand-text-qifaw">QIFAW</span>
-                    <span style="font-size: 11px; font-weight: 600; color: #0066cc; letter-spacing: 2px; text-transform: uppercase;">Technologies</span>
+                    <!-- இப்போ இந்த கிளாஸ் மூலமா லைட் மோடுல பிளாக் கலர்லயும், டார்க் மோடுல ஒயிட் கலர்லயும் கச்சிதமா மாறும் தம்பி -->
+                    <span class="brand-text-main">QIFAW</span>
+                    <span class="brand-text-sub">Technologies</span>
                 </div>
             </div>
             
@@ -89,9 +94,9 @@
         </div>
     </header>
 
-    <!-- [SLIDE 1] 🌟 3D மெйн பேனர் செக்ஷன் (!important இமேஜ் பாத் சேர்க்கப்பட்டுள்ளது) -->
+    <!-- [SLIDE 1] 🌟 3D மெயின் பேனர் செக்ஷன் -->
     <section id="home" class="hero" style="background-image: url('/static/banner.png'), url('https://images2.imgbox.com/cb/b4/Z5IulX3l_o.png') !important; position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
-        <div class="hero-overlay" style="background: rgba(15, 23, 42, 0.6) !important;"></div>
+        <div class="hero-overlay" style="background: rgba(15, 23, 42, 0.7) !important;"></div>
         <div class="hero-content anim-fade-up" style="position: relative; z-index: 2;">
             <h1>Transforming Ideas Into Technology</h1>
             <p>At Qifaw Technologies, we believe that every business, regardless of its size, deserves access to modern technology solutions that simplify operations and unlock new opportunities. Our mission is to bridge the gap between traditional business practices and digital transformation by developing practical, scalable, and affordable software solutions.</p>
@@ -100,7 +105,7 @@
     </section>
 
     <!-- [SLIDE 2] 🌟 About Us செக்ஷன் -->
-    <section id="about" class="about-section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c') !important; position: relative;">
+    <section id="about" class="about-section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c'); position: relative;">
         <div class="section-overlay"></div>
         <div class="about-container-wrapper">
             <div class="about-content-box anim-left">
@@ -128,7 +133,7 @@
     </section>
 
     <!-- [SLIDE 3] 🌟 Services செக்ஷன் -->
-    <section id="services" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') !important;">
+    <section id="services" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa');">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up">
             <h2>Our Services</h2>
@@ -142,7 +147,7 @@
     </section>
 
     <!-- [SLIDE 4] 🌟 Products செக்ஷன் -->
-    <section id="products" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3') !important;">
+    <section id="products" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up">
             <h2>Our Products</h2>
@@ -156,7 +161,7 @@
     </section>
 
     <!-- [SLIDE 5] 🌟 Careers செக்ஷன் -->
-    <section id="careers" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200') !important;">
+    <section id="careers" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200');">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up">
             <h2>Join Our Team 🚀</h2>
@@ -193,7 +198,7 @@
     </section>
 
     <!-- [SLIDE 6] 🌟 Contact செக்ஷன் -->
-    <section id="contact" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1423662055902-3e6e7e6426a4?w=1200') !important; padding: 60px 0;">
+    <section id="contact" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1423662055902-3e6e7e6426a4?w=1200'); padding: 60px 0;">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
             <h2>Contact Us</h2>
