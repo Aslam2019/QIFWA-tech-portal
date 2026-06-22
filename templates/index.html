@@ -20,7 +20,7 @@
     <header>
         <div class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
             
-            <!-- 🌟 [மாற்றப்பட்டது]: வட்ட வடிவ லோகோ கன்டெய்னர் + பெரிய QIFAW மற்றும் சிறிய Technologies பிராண்டிங் டெக்ஸ்ட் -->
+            <!-- 🌟 வட்ட வடிவ லோகோ கன்டெய்னர் + பெரிய QIFAW மற்றும் சிறிய Technologies பிராண்டிங் டெக்ஸ்ட் -->
             <div class="logo" style="display: flex; align-items: center; gap: 12px; max-height: none !important; height: auto !important;">
                 <div style="background: rgba(255, 255, 255, 0.95); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); overflow: hidden;">
                     <img src="/static/logo.jpg" alt="QIFAW Logo" style="width: 85%; height: 85%; object-fit: contain;" onerror="this.src='https://images2.imgbox.com/0f/32/MEniG0Xl_o.jpg'">
@@ -262,7 +262,7 @@
     <script>
         const dbProducts = [
             {% if db_products %}
-                {% r for p in db_products %}
+                {% for p in db_products %}
                     { title: "{{ p[0] }}", desc: "{{ p[1] }}", type: "{{ p[2] }}" },
                 {% endfor %}
             {% endif %}
