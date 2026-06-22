@@ -6,14 +6,29 @@
     <title>QIFAW TECHNOLOGIES - Empowering Business Growth</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 🌟 இமேஜ் கட் ஆகாமல் ப்ராப்பராக தெரிய வைக்க குளோபல் ஸ்டைல்ஸ் */
+        .hero, .bg-photo-section {
+            background-size: 100% 100% !important; /* இமேஜ் கட் ஆகாது, முழுமையாக ஸ்ட்ரெட்ச் ஆகி காட்டும் */
+            background-position: center top !important; /* தலையோ, முக்கிய பகுதிகளோ கட் ஆகாமல் மேலிருந்து காட்டும் */
+            background-repeat: no-repeat !important;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
-            <!-- 🌟 [மாற்றப்பட்டது]: லோகோ கன்டெய்னர் மற்றும் இமேஜ் சைஸ் ஸ்டாண்டர்ட் கார்ப்பரேட் அளவுக்கு கம்பீரமாக பெரிதாக்கப்பட்டுள்ளது தம்பி -->
-            <div class="logo" style="display: flex; align-items: center; max-height: none !important; height: auto !important;">
-                <img src="/static/logo.jpg" alt="QIFAW Logo" style="height: 55px !important; max-height: 55px !important; width: auto; object-fit: contain; border-radius: 4px; display: block;" onerror="this.src='https://images2.imgbox.com/0f/32/MEniG0Xl_o.jpg'">
+            
+            <!-- 🌟 [மாற்றப்பட்டது]: வட்ட வடிவ லோகோ கன்டெய்னர் + பெரிய QIFAW மற்றும் சிறிய Technologies பிராண்டிங் டெக்ஸ்ட் -->
+            <div class="logo" style="display: flex; align-items: center; gap: 12px; max-height: none !important; height: auto !important;">
+                <div style="background: rgba(255, 255, 255, 0.95); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); overflow: hidden;">
+                    <img src="/static/logo.jpg" alt="QIFAW Logo" style="width: 85%; height: 85%; object-fit: contain;" onerror="this.src='https://images2.imgbox.com/0f/32/MEniG0Xl_o.jpg'">
+                </div>
+                <div style="display: flex; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.1;">
+                    <span style="font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: 1px; text-transform: uppercase;">QIFAW</span>
+                    <span style="font-size: 11px; font-weight: 600; color: #38bdf8; letter-spacing: 2px; text-transform: uppercase;">Technologies</span>
+                </div>
             </div>
             
             <div class="theme-toggle" id="themeToggle">
@@ -61,8 +76,8 @@
         </div>
     </header>
 
-    <!-- [SLIDE 1] 🌟 3D மெயின் பேனர் செக்ஷன் (டார்க் ப்ளூ தீம்) -->
-    <section id="home" class="hero" style="background-image: url('/static/banner.png'), url('https://images2.imgbox.com/cb/b4/Z5IulX3l_o.png') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+    <!-- [SLIDE 1] 🌟 3D மெயின் பேனர் செக்ஷன் (எழுத்துக்கள் மறையாதவாறு பிக்ஸ் செய்யப்பட்டுள்ளது) -->
+    <section id="home" class="hero" style="background-image: url('/static/banner.png'), url('https://images2.imgbox.com/cb/b4/Z5IulX3l_o.png') !important; position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="hero-overlay" style="background: rgba(15, 23, 42, 0.7) !important;"></div>
         <div class="hero-content anim-fade-up" style="position: relative; z-index: 2;">
             <h1>Transforming Ideas Into Technology</h1>
@@ -71,8 +86,8 @@
         </div>
     </section>
 
-    <!-- [SLIDE 2] 🌟 About Us செக்ஷன் (டார்க் ப்ளூ தீம்) -->
-    <section id="about" class="about-section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c');">
+    <!-- [SLIDE 2] 🌟 About Us செக்ஷன் (மனிதர்களின் தலை கட் ஆகாதவாறு ப்ராப்பராக பிக்ஸ் செய்யப்பட்டுள்ளது) -->
+    <section id="about" class="about-section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c'); position: relative;">
         <div class="section-overlay"></div>
         <div class="about-container-wrapper">
             <div class="about-content-box anim-left">
@@ -247,7 +262,7 @@
     <script>
         const dbProducts = [
             {% if db_products %}
-                {% for p in db_products %}
+                {% r for p in db_products %}
                     { title: "{{ p[0] }}", desc: "{{ p[1] }}", type: "{{ p[2] }}" },
                 {% endfor %}
             {% endif %}
