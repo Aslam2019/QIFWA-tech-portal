@@ -11,12 +11,13 @@
 
     <header>
         <div class="navbar">
+            <!-- 🌟 லோகோ மற்றும் பளிச்சென்ற ஒயிட் பிராண்ட் ஹைலைட் பகுதி -->
             <div class="logo" style="display: flex; align-items: center; gap: 8px;">
-                <img src="/static/logo.jpg" alt="QIFAW Logo" style="height: 42px; width: auto; object-fit: contain; border-radius: 4px;">
+                <img src="/static/logo.jpg" alt="QIFAW Logo" style="height: 42px; width: auto; object-fit: contain; border-radius: 4px;" onerror="this.src='https://images2.imgbox.com/0f/32/MEniG0Xl_o.jpg'">
                 <div style="display: flex; align-items: baseline; font-family: sans-serif;">
                     <span style="font-size: 26px; font-weight: 900; color: #38bdf8; letter-spacing: 0.5px;">Q</span>
-                    <span style="font-size: 21px; font-weight: bold; color: #fff; letter-spacing: 0.5px; margin-right: 6px;">IFAW</span>
-                    <span style="font-size: 15px; font-weight: 500; color: #cbd5e1; letter-spacing: 0.5px; text-transform: uppercase;">Technologies</span>
+                    <span style="font-size: 21px; font-weight: bold; color: #ffffff; letter-spacing: 0.5px; margin-right: 6px;">IFAW</span>
+                    <span style="font-size: 15px; font-weight: 500; color: #e2e8f0; letter-spacing: 0.5px; text-transform: uppercase;">Technologies</span>
                 </div>
             </div>
             
@@ -65,15 +66,17 @@
         </div>
     </header>
 
-    <section id="home" class="hero" style="background-image: url('/static/banner.png'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
-        <div class="hero-overlay"></div>
-        <div class="hero-content anim-fade-up">
+    <!-- 🔥 [மாற்றப்பட்டது]: !important மற்றும் பேக்-அப் கிளவுட் லிங்க் மூலமாக ஓவர்லேவை முறியடித்து பேனர் கொண்டுவரப்பட்டுள்ளது -->
+    <section id="home" class="hero" style="background-image: url('/static/banner.png'), url('https://images2.imgbox.com/cb/b4/Z5IulX3l_o.png') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+        <div class="hero-overlay" style="background: rgba(15, 23, 42, 0.7) !important;"></div>
+        <div class="hero-content anim-fade-up" style="position: relative; z-index: 2;">
             <h1>Transforming Ideas Into Technology</h1>
             <p>At Qifaw Technologies, we believe that every business, regardless of its size, deserves access to modern technology solutions that simplify operations and unlock new opportunities. Our mission is to bridge the gap between traditional business practices and digital transformation by developing practical, scalable, and affordable software solutions.</p>
             <a href="#contact" class="btn">Get Started</a>
         </div>
     </section>
 
+    <!-- [SLIDE 2] 🌟 About Us செக்ஷன் (பழைய ஒரிஜினல் பேக்ரவுண்ட் போட்டோ மற்றும் டார்க் ப்ளூ தீம்) -->
     <section id="about" class="about-section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c');">
         <div class="section-overlay"></div>
         <div class="about-container-wrapper">
@@ -101,6 +104,7 @@
         </div>
     </section>
 
+    <!-- [SLIDE 3] 🌟 Services செக்ஷன் (பழைய பேக்ரவுண்ட் போட்டோ தீம்) -->
     <section id="services" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa');">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up">
@@ -114,6 +118,7 @@
         </div>
     </section>
 
+    <!-- [SLIDE 4] 🌟 Products செக்ஷன் (பழைய ஒரிஜினல் பேக்ரவுண்ட் போட்டோ தீம்) -->
     <section id="products" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up">
@@ -127,6 +132,7 @@
         </div>
     </section>
 
+    <!-- [SLIDE 5] 🌟 Careers செக்ஷன் மற்றும் பெரிய அளவில் ஹைலைட் செய்யப்பட்ட Core Values பகுதி -->
     <section id="careers" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200');">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up">
@@ -164,10 +170,11 @@
         </div>
     </section>
 
+    <!-- [SLIDE 6] 🌟 Contact செக்ஷன் (பழைய ஒரிஜினல் பேக்ரவுண்ட் போட்டோ தீம்) -->
     <section id="contact" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1423662055902-3e6e7e6426a4?w=1200'); padding: 60px 0;">
         <div class="section-overlay"></div>
         <div class="content-wrapper anim-fade-up" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h2 style="margin-bottom: 40px; text-align: center;">Contact Us</h2>
+            <h2>Contact Us</h2>
             
             <div class="contact-flex-wrapper" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
                 <div class="contact-left-form" style="flex: 1; min-width: 300px; background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; text-align: left;">
@@ -252,15 +259,5 @@
         ];
     </script>
     <script src="/static/script.js"></script>
-    
-    <script>
-        const openInternshipsNav = document.getElementById('openInternshipsNav');
-        const openJobsNav = document.getElementById('openJobsNav');
-        const openInternshipsBtn = document.getElementById('openInternships');
-        const openJobsBtn = document.getElementById('openJobs');
-
-        if(openInternshipsNav) openInternshipsNav.addEventListener('click', () => openInternshipsBtn && openInternshipsBtn.click());
-        if(openJobsNav) openJobsNav.addEventListener('click', () => openJobsBtn && openJobsBtn.click());
-    </script>
 </body>
 </html>
