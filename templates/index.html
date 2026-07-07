@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QIFAW TECHNOLOGIES - Empowering Business Growth</title>
+    <!-- 🌟 [மாற்றப்பட்டது]: ?v=1.1 சேர்க்கப்பட்டுள்ளது - இது பிரவுசர் கேச்சை உடைத்து புது கலரை உடனே காட்டும் தம்பி -->
+    <link rel="stylesheet" href="/static/style.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .hero, .bg-photo-section {
+            background-size: 100% 100% !important;
+            background-position: center top !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* 🌟 இன்லைன் சிஎஸ்எஸ் மூலமாக நேரடியாக லைட் மற்றும் டார்க் மோடுக்கு கலர் போர்ஸ் செய்யப்படுகிறது */
+        .brand-text-main {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        /* 🕶️ டார்க் மோடு இருக்கும் போது ஒயிட் கலர் */
+        body.dark-mode .brand-text-main {
+            color: #ffffff !important;
+        }
+        
+        /* ☀️ லைட் மோடு இருக்கும் போது பக்கா பிளாக் கலர் (இனிமேல் மறையவே மறையாது) */
+        body:not(.dark-mode) .brand-text-main {
+            color: #1e293b !important;
+        }
+        
+        .brand-text-sub {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #38bdf8 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
+            
+            <div class="logo" style="display: flex; align-items: center; gap: 12px; max-height: none !important; height: auto !important;">
+                <div style="background: rgba(255, 255, 255, 0.95); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); overflow: hidden;">
+                    <img src="/static/logo.jpg" alt="QIFAW Logo" style="width: 85%; height: 85%; object-fit: contain;" onerror="this.src='https://images2.imgbox.com/0f/32/MEniG0Xl_o.jpg'">
+                </div>
+                <div style="display: flex; flex-direction: column; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.1;">
+                    <span class="brand-text-main">QIFAW</span>
+                    <span class="brand-text-sub">Technologies</span>
+                </div>
+            </div>
+            
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </div>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">Services <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#services">SaaS Development</a>
+                        <a href="#services">Custom Software</a>
+                        <a href="#services">Automation Systems</a>
+                        <a href="#services">Cloud Solutions</a>
+                    </div>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#products" class="dropbtn">Products <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#products">Retail & Food Tech</a>
+                        <a href="#products">Business Automation</a>
+                        <a href="#products">Inventory & E-commerce</a>
+                        <a href="#products">AI & Workforce</a>
+                    </div>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#careers" class="dropbtn">Careers <i class="fas fa-caret-down"></i></a>
+                    <!-- <div class="dropdown-content" id="careerDropdown">
+                        <button id="openInternshipsNav">🎓 Internship</button>
+                        <button id="openJobsNav">🚀 Full-Time Job</button>
+                    </div> -->
+                </li>
+                
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="hero" style="background-image: url('/static/banner.png'), url('https://images2.imgbox.com/cb/b4/Z5IulX3l_o.png') !important; position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+        <div class="hero-overlay" style="background: rgba(15, 23, 42, 0.7) !important;"></div>
+        <div class="hero-content anim-fade-up" style="position: relative; z-index: 2;">
+            <h1>Transforming Ideas Into Technology</h1>
+            <p>At Qifaw Technologies, we believe that every business, regardless of its size, deserves access to modern technology solutions that simplify operations and unlock new opportunities. Our mission is to bridge the gap between traditional business practices and digital transformation by developing practical, scalable, and affordable software solutions.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c'); position: relative;">
+        <div class="section-overlay"></div>
+        <div class="about-container-wrapper">
+            <div class="about-content-box anim-left">
+                <h2>Who We Are</h2>
+                <p style="font-size: 17px; margin-bottom: 20px;">Qifaw Technologies is a technology-driven software company committed to transforming the way small and medium-sized businesses operate.</p>
+                
+                <div class="mission-vision-box" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-left: 4px solid #38bdf8; border-radius: 6px; backdrop-filter: blur(5px);">
+                        <h4 style="color: #38bdf8; font-size: 19px; margin-bottom: 8px;"><i class="fas fa-bullseye"></i> Our Mission</h4>
+                        <p style="font-size: 15px; line-height: 1.6; color: #e2e8f0; text-align: left; margin: 0;">To create and deliver innovative technology solutions that simplify business operations, automate processes, improve productivity, and enable businesses to achieve sustainable growth.</p>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-left: 4px solid #38bdf8; border-radius: 6px; backdrop-filter: blur(5px);">
+                        <h4 style="color: #38bdf8; font-size: 19px; margin-bottom: 8px;"><i class="fas fa-eye"></i> Our Vision</h4>
+                        <p style="font-size: 15px; line-height: 1.6; color: #e2e8f0; text-align: left; margin: 0;">To become a trusted technology partner for businesses worldwide by building intelligent software products and digital solutions that empower organizations to operate more efficiently, make better decisions, and scale confidently.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-stats-box anim-right">
+                <div class="stat-card"><h3>10+</h3><p>Projects</p></div>
+                <div class="stat-card"><h3>25+</h3><p>Clients</p></div>
+                <div class="stat-card"><h3>10+</h3><p>Experts</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa');">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up">
+            <h2>Our Services</h2>
+            <div class="grid-container">
+                <div class="card-item"><h3>SaaS Product Development</h3><p>Building diverse portfolios of SaaS products to address common operational challenges.</p></div>
+                <div class="card-item"><h3>Custom Software Development</h3><p>Tailored technology solutions designed, deployed, and maintained to align with business goals.</p></div>
+                <div class="card-item"><h3>Business Process Automation</h3><p>Implementing intelligent automation systems to eliminate inefficiencies and streamline workflows.</p></div>
+                <div class="card-item"><h3>Cloud & API Solutions</h3><p>Secure cloud infrastructure setup combined with robust API development.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up">
+            <h2>Our Products</h2>
+            <div class="grid-container">
+                <div class="card-item"><i class="fas fa-store"></i><h3>Retail & Food Tech</h3><p>Advanced digital platforms for Retail Management and Restaurant technology.</p></div>
+                <div class="card-item"><i class="fas fa-users-gear"></i><h3>Business Automation & CRM</h3><p>Intelligent Customer Relationship Management and core automation systems.</p></div>
+                <div class="card-item"><i class="fas fa-boxes-stacked"></i><h3>Inventory & E-commerce</h3><p>Smart Inventory Management tracking combined with corporate E-commerce solutions.</p></div>
+                <div class="card-item"><i class="fas fa-brain"></i><h3>AI & Workforce</h3><p>Next-generation Artificial Intelligence applications and advanced management tools.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200');">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up">
+            <h2>Join Our Team 🚀</h2>
+            <p class="career-subtitle" style="color: #cbd5e1; margin-bottom: 30px;">
+                Build intelligent software products and digital solutions with QIFAW TECHNOLOGIES.
+            </p>
+            <div class="career-portal-buttons">
+                <button class="portal-btn" id="openInternships">👉 Explore Internships</button>
+                <button class="portal-btn" id="openJobs">👉 Explore Full-Time Jobs</button>
+            </div>
+            
+            <div class="benefits" style="margin-top: 60px; width: 100%;">
+                <h3 style="color: #38bdf8; margin-bottom: 35px; text-align: center; font-size: 28px; font-weight: bold; letter-spacing: 1px;">Our Core Values</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 10px;">
+                    <div style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); padding: 30px; border-radius: 12px; text-align: left; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);">
+                        <h4 style="color: #fff; font-size: 21px; margin-bottom: 10px; font-weight: bold;">💡 Innovation</h4>
+                        <p style="font-size: 15px; color: #e2e8f0; line-height: 1.6; margin: 0;">Continuously exploring emerging technologies.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); padding: 30px; border-radius: 12px; text-align: left; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);">
+                        <h4 style="color: #fff; font-size: 21px; margin-bottom: 10px; font-weight: bold;">🤝 Customer Success</h4>
+                        <p style="font-size: 14px; color: #e2e8f0; line-height: 1.6; margin: 0;">Measured by the success of our users.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); padding: 30px; border-radius: 12px; text-align: left; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);">
+                        <h4 style="color: #fff; font-size: 21px; margin-bottom: 10px; font-weight: bold;">✨ Integrity</h4>
+                        <p style="font-size: 14px; color: #e2e8f0; line-height: 1.6; margin: 0;">Transparency and professionalism in every interaction.</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); padding: 30px; border-radius: 12px; text-align: left; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);">
+                        <h4 style="color: #fff; font-size: 21px; margin-bottom: 10px; font-weight: bold;">🎯 Quality</h4>
+                        <p style="font-size: 14px; color: #e2e8f0; line-height: 1.6; margin: 0;">Exceptional user experiences and high-quality software.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-photo-section" style="background-image: url('https://images.unsplash.com/photo-1423662055902-3e6e7e6426a4?w=1200'); padding: 60px 0;">
+        <div class="section-overlay"></div>
+        <div class="content-wrapper anim-fade-up" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2>Contact Us</h2>
+            <div class="contact-flex-wrapper" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+                <div class="contact-left-form" style="flex: 1; min-width: 300px; background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; text-align: left;">
+                    <h3 style="color: #38bdf8; margin-bottom: 20px; font-size: 22px;">Get In Touch</h3>
+                    <!-- <form id="contactForm" action="#contact" method="GET" style="display: flex; flex-direction: column; gap: 15px;">
+                        <input type="text" placeholder="Your Name" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: #fff; font-size: 15px;">
+                        <input type="email" placeholder="Your Email Address" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: #fff; font-size: 15px;">
+                        <textarea placeholder="Your Message" rows="4" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: #fff; font-size: 15px; resize: none;"></textarea>
+                        <button type="submit" style="background: #0066cc; color: #fff; border: none; padding: 12px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Send Message</button>
+                    </form> -->
+
+                    <!-- 🎯 [இதோ அசல் பிக்ஸ்]: ஃபார்ம் மற்றும் இன்புட் ஐடிகள் ஜாவாஸ்கிரிப்ட்டுக்கு ஏத்த மாதிரி கச்சிதமா இருக்கு ப்ரோ -->
+<!-- 🎯 [காண்டாக்ட் ஃபார்ம் - இமெயிலுக்கு பதிலா ஃபோன் நம்பர் பிக்ஸ்] -->
+<form id="contactForm" action="#contact" method="GET" style="display: flex; flex-direction: column; gap: 15px;">
+    
+    <!-- இன்புட் 1: Name -->
+    <input type="text" id="contactName" placeholder="Your Name" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: #fff; font-size: 15px;">
+    
+    <!-- 📞 இன்புட் 2: Phone Number (இமெயிலுக்கு பதிலா இங்க ஃபோன் நம்பர் மாத்தியாச்சு ப்ரோ) -->
+    <input type="tel" id="contactPhone" placeholder="Your Phone Number" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: #fff; font-size: 15px;">
+    
+    <!-- டெக்ஸ்ட் ஏரியா 3: Message -->
+    <textarea id="contactMessage" placeholder="Your Message" rows="4" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; color: #fff; font-size: 15px;"></textarea>
+    
+    <button type="submit" style="background: #0066cc; color: #fff; border: none; padding: 12px; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s;">Send Message</button>
+
+</form>
+                </div>
+                
+                <div class="contact-right-cards" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; text-align: left;">
+                    <div class="c-box" style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; display: flex; gap: 15px; align-items: center;">
+                        <i class="fas fa-envelope" style="font-size: 24px; color: #0066cc;"></i>
+                        <div>
+                            <h4 style="margin: 0 0 5px 0; color: #fff;">Email</h4>
+                            <p style="color: #cbd5e1; margin: 0; font-size: 15px;">hr@qifawtechnologies.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="c-box" style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; display: flex; gap: 15px; align-items: flex-start;">
+                        <i class="fas fa-location-dot" style="font-size: 24px; color: #0066cc; margin-top: 3px;"></i>
+                        <div>
+                            <h4 style="margin: 0 0 5px 0; color: #fff;">Registered Office</h4>
+                            <p style="color: #cbd5e1; margin: 0; font-size: 14px; line-height: 1.5;">
+                                PS. No. 8, First Floor, Beside Zackria Complex, Junction, Central Bustand, Trichy - 620001
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="c-box" style="background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(5px); border: 1px solid rgba(30, 41, 59, 0.7); padding: 20px; border-radius: 8px; display: flex; gap: 15px; align-items: flex-start;">
+                        <i class="fas fa-building" style="font-size: 24px; color: #0066cc; margin-top: 3px;"></i>
+                        <div>
+                            <h4 style="margin: 0 0 5px 0; color: #fff;">Corporate Office (Universe Coworks)</h4>
+                            <p style="color: #cbd5e1; margin: 0; font-size: 14px; line-height: 1.5;">
+                                2nd Floor, Salai Road, Thillainagar, Trichy - 600018
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="careerPortalModal" class="career-portal-overlay">
+        <div class="portal-box">
+            <span class="close-portal" id="closePortal">&times;</span>
+            <h2 id="portalTypeTitle">Opportunities</h2>
+            <div class="portal-job-list" id="portalJobList"></div>
+        </div>
+    </div>
+
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalJobTitle">Application Form</h2>
+            <div id="jobRequirements" class="job-req-box"></div>
+            
+            <!-- <form id="careerForm">
+                <input type="hidden" id="hiddenJobInput" value="">
+                <input type="text" id="candName" placeholder="Full Name" required>
+                <input type="email" id="candEmail" placeholder="Email Address" required>
+                <input type="tel" id="candPhone" placeholder="Phone Number" required>
+                <input type="file" id="resumeFileInput" accept=".pdf,.doc,.docx" required>
+                <button type="submit">Submit Application</button>
+            </form> -->
+
+            <!-- 🎯 கேரியர் அப்ளிகேஷன் ஃபார்ம் -->
+<form id="careerForm">
+    <!-- பயனர் பெயர் -->
+    <input type="text" id="candName" placeholder="Your Name" required>
+    
+    <!-- பயனர் மெயில் -->
+    <input type="email" id="candEmail" placeholder="Your Email" required>
+    
+    <!-- பயனர் ஃபோன் -->
+    <input type="text" id="candPhone" placeholder="Your Phone Number" required>
+    
+    <!-- ரெஸ்யூம் அப்லோடு பாக்ஸ் (id="resumeFileInput" ஸ்ட்ரிக்ட்டா இருக்கணும் ப்ரோ) -->
+    <input type="file" id="resumeFileInput" accept=".pdf,.doc,.docx" required>
+    
+    <!-- ஹிட்டன் இன்புட் (வேலைக்கான பதவி பெயர் லோடு ஆக) -->
+    <input type="hidden" id="hiddenJobInput">
+    
+    <button type="submit">Submit Application</button>
+</form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 <strong style="color: #38bdf8; font-weight: bold; font-size: 16px;">QIFAW TECHNOLOGIES</strong>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- 🎯 லைன் 280 முதல் 288 வரை இருக்குற பழைய ஸ்கிரிப்ட்டுக்கு பதிலா இதை அப்படியே பேஸ்ட் பண்ணுங்க ப்ரோ -->
+    <!-- 🎯 { id: ... } இருக்குற அந்த வரியை மட்டும் இப்படி மாத்துங்க ப்ரோ (desc-க்கு பதிலா details) -->
+    <script>
+        const dbProducts = [
+            {% if db_products %}
+                {% for p in db_products %}
+                    { id: "{{ p[3] }}", title: "{{ p[0] }}", details: "{{ p[1] }}", type: "{{ p[2] }}" },
+                {% endfor %}
+            {% endif %}
+        ];
+    </script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
