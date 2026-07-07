@@ -271,8 +271,172 @@ if (careerForm) {
 }
 
 
+// // =========================================================================
+// // --- 7. [ஃப்ளாஸ்க் டேட்டாபேஸ் ಲಿங்க்็ด - அனிமேஷன் & பெர்ஃபெக்ட் அலைன்மென்ட்] ---
+// // =========================================================================
+
+// function injectAttractiveButtonStyles() {
+//     if (document.getElementById('animated-admin-btn-styles')) return;
+//     const styleTag = document.createElement('style');
+//     styleTag.id = 'animated-admin-btn-styles';
+//     styleTag.innerHTML = `
+//         .admin-action-btn-group {
+//             display: flex !important;
+//             align-items: center !important;
+//             gap: 12px !important;
+//         }
+//         .modern-admin-btn {
+//             padding: 8px 16px !important;
+//             font-size: 13px !important;
+//             font-weight: 600 !important;
+//             border: none !important;
+//             border-radius: 8px !important;
+//             cursor: pointer !important;
+//             display: inline-flex !important;
+//             align-items: center !important;
+//             gap: 6px !important;
+//             white-space: nowrap !important;
+//             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+//             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+//             min-width: 100px !important;
+//             justify-content: center !important;
+//         }
+//         .modern-admin-btn:hover {
+//             transform: translateY(-2px) scale(1.03) !important;
+//             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3) !important;
+//         }
+//         .modern-admin-btn:active {
+//             transform: translateY(0) scale(0.98) !important;
+//         }
+//         .btn-hold-state {
+//             background: linear-gradient(135deg, #ffb300, #ff8f00) !important;
+//             color: #000000 !important;
+//         }
+//         .btn-unhold-state {
+//             background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+//             color: #ffffff !important;
+//         }
+//         .btn-delete-style {
+//             background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+//             color: #ffffff !important;
+//         }
+//         .job-item-admin {
+//             display: flex !important;
+//             justify-content: space-between !important;
+//             align-items: center !important;
+//             padding: 16px !important;
+//             margin-bottom: 12px !important;
+//             background: rgba(255, 255, 255, 0.03) !important;
+//             border: 1px solid rgba(255, 255, 255, 0.08) !important;
+//             border-radius: 12px !important;
+//             backdrop-filter: blur(10px) !important;
+//             transition: border-color 0.3s ease !important;
+//         }
+//         .job-item-admin:hover {
+//             border-color: rgba(255, 255, 255, 0.2) !important;
+//         }
+//     `;
+//     document.head.appendChild(styleTag);
+// }
+
+// function syncAdminHoldUI() {
+//     injectAttractiveButtonStyles();
+//     let oppList = JSON.parse(localStorage.getItem('opportunities')) || [];
+//     const jobItems = document.querySelectorAll('.job-item-admin');
+    
+//     jobItems.forEach(item => {
+//         item.style.display = "flex";
+//         item.style.justifyContent = "space-between";
+//         item.style.alignItems = "center";
+
+//         const id = item.id.replace('job-card-', '');
+//         const holdBtn = document.getElementById(`hold-btn-${id}`);
+//         const holdBadge = document.getElementById(`hold-badge-${id}`);
+        
+//         const btnGroup = holdBtn ? holdBtn.parentElement : null;
+//         if (btnGroup) {
+//             btnGroup.className = "admin-action-btn-group";
+//             btnGroup.removeAttribute('style'); 
+//         }
+
+//         const currentTitle = item.getAttribute('data-title') || item.querySelector('strong').innerText;
+//         const storedJob = oppList.find(opp => opp.id == id || (opp.title && opp.title.trim().toLowerCase() === currentTitle.trim().toLowerCase()));
+        
+//         if (holdBtn) {
+//             if (storedJob && storedJob.status === 'hold') {
+//                 holdBtn.innerHTML = "<span>▶️</span> Unhold";
+//                 // 🎯 [பக்கா பிக்ஸ்]: பழைய கிளாஸ்களை முழுசா ரிமூவ் பண்ணிட்டு பச்சை கலர் ஸ்டேட்டை ஸ்ட்ரிக்ட்டா லாக் பண்றோம் ப்ரோ!
+//                 holdBtn.className = "modern-admin-btn btn-unhold-state";
+//                 if (holdBadge) {
+//                     holdBadge.innerHTML = `<span class="badge" style="background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid #ef4444; margin-left:8px;">HOLD</span>`;
+//                 }
+//             } else {
+//                 holdBtn.innerHTML = "<span>⏸️</span> Hold";
+//                 // 🎯 [பக்கா பிக்ஸ்]: பழைய கிளாஸ்களை முழுசா ரிமூவ் பண்ணிட்டு மஞ்சள் கலர் ஸ்டேட்டை ஸ்ட்ரிக்ட்டா லாக் பண்றோம் ப்ரோ!
+//                 holdBtn.className = "modern-admin-btn btn-hold-state";
+//                 if (holdBadge) holdBadge.innerHTML = "";
+//             }
+//         }
+
+//         const delBtn = item.querySelector('.del-btn');
+//         if (delBtn) {
+//             delBtn.className = "modern-admin-btn btn-delete-style";
+//             delBtn.removeAttribute('style');
+//         }
+//     });
+// }
+
+// window.toggleHold = function(id) {
+//     let oppList = JSON.parse(localStorage.getItem('opportunities')) || [];
+//     const jobCard = document.getElementById(`job-card-${id}`);
+    
+//     let title = "";
+//     let details = "";
+//     let catBadge = "";
+    
+//     if (jobCard) {
+//         title = jobCard.getAttribute('data-title') || jobCard.querySelector('strong').innerText;
+//         details = jobCard.getAttribute('data-details') || '';
+//         catBadge = jobCard.getAttribute('data-category') || '';
+//     }
+    
+//     let jobIndex = oppList.findIndex(opp => opp.id == id || opp.title.trim().toLowerCase() === title.trim().toLowerCase());
+    
+//     if (jobIndex === -1) {
+//         oppList.push({
+//             id: id,
+//             title: title,
+//             category: catBadge, 
+//             details: details,
+//             status: 'active'
+//         });
+//         jobIndex = oppList.length - 1;
+//     }
+
+//     oppList[jobIndex].status = oppList[jobIndex].status === 'hold' ? 'active' : 'hold';
+//     localStorage.setItem('opportunities', JSON.stringify(oppList));
+    
+//     const holdBtn = document.getElementById(`hold-btn-${id}`);
+//     const holdBadge = document.getElementById(`hold-badge-${id}`);
+    
+//     // 🎯 [பக்கா பிக்ஸ்]: கிளிக் செய்யும்போதும் கிளாஸ்கள் கரக்ட்டா இன்ஸ்டன்டா ரிப்ரெஷ் ஆக கண்டிஷன் ப்ரோ
+//     if (oppList[jobIndex].status === 'hold') {
+//         if (holdBtn) {
+//             holdBtn.innerHTML = "<span>▶️</span> Unhold";
+//             holdBtn.className = "modern-admin-btn btn-unhold-state";
+//         }
+//         if (holdBadge) holdBadge.innerHTML = `<span class="badge" style="background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid #ef4444; margin-left:8px;">HOLD</span>`;
+//     } else {
+//         if (holdBtn) {
+//             holdBtn.innerHTML = "<span>⏸️</span> Hold";
+//             holdBtn.className = "modern-admin-btn btn-hold-state";
+//         }
+//         if (holdBadge) holdBadge.innerHTML = "";
+//     }
+// };
+
 // =========================================================================
-// --- 7. [ஃப்ளாஸ்க் டேட்டாபேஸ் ಲಿங்க்็ด - அனிமேஷன் & பெர்ஃபெக்ட் அலைன்மென்ட்] ---
+// --- 7. [ஃப்ளாஸ்க் டேட்டாபேஸ் ಲಿಂಕ್ッド - அனிமேஷன் & பெர்ஃபெக்ட் அலைன்மென்ட்] ---
 // =========================================================================
 
 function injectAttractiveButtonStyles() {
@@ -308,12 +472,13 @@ function injectAttractiveButtonStyles() {
         .modern-admin-btn:active {
             transform: translateY(0) scale(0.98) !important;
         }
+        /* 🎯 சார் கேட்ட அக்யூரெட் கலர் ஸ்டைல்ஸ் ப்ரோ: Hold பண்ணா Yellow, Unhold பண்ணா Green */
         .btn-hold-state {
-            background: linear-gradient(135deg, #ffb300, #ff8f00) !important;
+            background: linear-gradient(135deg, #ffb300, #ff8f00) !important; /* Yellow */
             color: #000000 !important;
         }
         .btn-unhold-state {
-            background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+            background: linear-gradient(135deg, #22c55e, #16a34a) !important; /* Green */
             color: #ffffff !important;
         }
         .btn-delete-style {
@@ -359,21 +524,22 @@ function syncAdminHoldUI() {
             btnGroup.removeAttribute('style'); 
         }
 
-        const currentTitle = item.getAttribute('data-title') || item.querySelector('strong').innerText;
-        const storedJob = oppList.find(opp => opp.id == id || (opp.title && opp.title.trim().toLowerCase() === currentTitle.trim().toLowerCase()));
+        const currentTitle = item.getAttribute('data-title') || (item.querySelector('strong') ? item.querySelector('strong').innerText : "");
+        // 🎯 [மரண மாஸ் பிக்ஸ்]: ID அல்லது Title எது மேட்ச் ஆனாலும் கரக்ட்டா புடிக்கும் லாஜிக் ப்ரோ
+        const storedJob = oppList.find(opp => String(opp.id) === String(id) || (opp.title && opp.title.trim().toLowerCase() === currentTitle.trim().toLowerCase()));
         
         if (holdBtn) {
+            // 🎯 [கலர் லாஜிக்]: Hold ஆகியிருந்தால் பட்டன் "▶️ Unhold" ஆகி பச்சை (Green) கலர்ல இருக்கணும் ப்ரோ!
             if (storedJob && storedJob.status === 'hold') {
                 holdBtn.innerHTML = "<span>▶️</span> Unhold";
-                // 🎯 [பக்கா பிக்ஸ்]: பழைய கிளாஸ்களை முழுசா ரிமூவ் பண்ணிட்டு பச்சை கலர் ஸ்டேட்டை ஸ்ட்ரிக்ட்டா லாக் பண்றோம் ப்ரோ!
-                holdBtn.className = "modern-admin-btn btn-unhold-state";
+                holdBtn.className = "modern-admin-btn btn-unhold-state"; // Green
                 if (holdBadge) {
                     holdBadge.innerHTML = `<span class="badge" style="background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid #ef4444; margin-left:8px;">HOLD</span>`;
                 }
             } else {
+                // 🎯 Hold ஆகாமல் நார்மலா இருந்தால் பட்டன் "⏸️ Hold" ஆகி மஞ்சள் (Yellow) கலர்ல இருக்கணும் ப்ரோ!
                 holdBtn.innerHTML = "<span>⏸️</span> Hold";
-                // 🎯 [பக்கா பிக்ஸ்]: பழைய கிளாஸ்களை முழுசா ரிமூவ் பண்ணிட்டு மஞ்சள் கலர் ஸ்டேட்டை ஸ்ட்ரிக்ட்டா லாக் பண்றோம் ப்ரோ!
-                holdBtn.className = "modern-admin-btn btn-hold-state";
+                holdBtn.className = "modern-admin-btn btn-hold-state"; // Yellow
                 if (holdBadge) holdBadge.innerHTML = "";
             }
         }
@@ -395,12 +561,12 @@ window.toggleHold = function(id) {
     let catBadge = "";
     
     if (jobCard) {
-        title = jobCard.getAttribute('data-title') || jobCard.querySelector('strong').innerText;
+        title = jobCard.getAttribute('data-title') || (jobCard.querySelector('strong') ? jobCard.querySelector('strong').innerText : "");
         details = jobCard.getAttribute('data-details') || '';
         catBadge = jobCard.getAttribute('data-category') || '';
     }
     
-    let jobIndex = oppList.findIndex(opp => opp.id == id || opp.title.trim().toLowerCase() === title.trim().toLowerCase());
+    let jobIndex = oppList.findIndex(opp => String(opp.id) === String(id) || opp.title.trim().toLowerCase() === title.trim().toLowerCase());
     
     if (jobIndex === -1) {
         oppList.push({
@@ -416,23 +582,8 @@ window.toggleHold = function(id) {
     oppList[jobIndex].status = oppList[jobIndex].status === 'hold' ? 'active' : 'hold';
     localStorage.setItem('opportunities', JSON.stringify(oppList));
     
-    const holdBtn = document.getElementById(`hold-btn-${id}`);
-    const holdBadge = document.getElementById(`hold-badge-${id}`);
-    
-    // 🎯 [பக்கா பிக்ஸ்]: கிளிக் செய்யும்போதும் கிளாஸ்கள் கரக்ட்டா இன்ஸ்டன்டா ரிப்ரெஷ் ஆக கண்டிஷன் ப்ரோ
-    if (oppList[jobIndex].status === 'hold') {
-        if (holdBtn) {
-            holdBtn.innerHTML = "<span>▶️</span> Unhold";
-            holdBtn.className = "modern-admin-btn btn-unhold-state";
-        }
-        if (holdBadge) holdBadge.innerHTML = `<span class="badge" style="background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid #ef4444; margin-left:8px;">HOLD</span>`;
-    } else {
-        if (holdBtn) {
-            holdBtn.innerHTML = "<span>⏸️</span> Hold";
-            holdBtn.className = "modern-admin-btn btn-hold-state";
-        }
-        if (holdBadge) holdBadge.innerHTML = "";
-    }
+    // 🎯 இன்ஸ்டன்டா UI-ஐ அப்டேட் பண்ணி ரெப்ரெஷ் பண்றோம் ப்ரோ
+    syncAdminHoldUI();
 };
 
 
