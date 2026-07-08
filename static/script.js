@@ -289,7 +289,7 @@ if (careerForm) {
         const appliedJob = document.getElementById("hiddenJobInput") ? document.getElementById("hiddenJobInput").value.trim() : "Job Application";
 
         // 🎯 [FIXED URL]: நீங்க எடுத்துட்டு வந்த கரக்ட்டான புது வெப் ஆப் யூஆர்எல் இங்க போட்டாச்சு ப்ரோ!
-        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxKPTtRvL_HgdIJT0OBI1FXrCsPGDMO-tPRJPCujbSgxpyYmpHpB_0igb6cBG9HzEr9/exec";
+        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxQnKvIeRRFRCyGMUvQMpwFIK_UOUiqPEqvcs-L_unuITwhJdwMhBiuXtPBYH4yhSoejg/exec";
 
         if (!fileInput || fileInput.files.length === 0) {
             alert("Please upload your resume!");
@@ -569,7 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const candMessage = messageEl ? messageEl.value.trim() : "No Message Content";
 
             // 🎯 [FIXED URL]: காண்டாக்ட் ஃபார்மிற்கும் கரக்ட்டான புது யூஆர்எல் இங்க போட்டாச்சு ப்ரோ!
-            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxKPTtRvL_HgdIJT0OBI1FXrCsPGDMO-tPRJPCujbSgxpyYmpHpB_0igb6cBG9HzEr9/exec";
+            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbxQnKvIeRRFRCyGMUvQMpwFIK_UOUiqPEqvcs-L_unuITwhJdwMhBiuXtPBYH4yhSoejg/exec";
 
             // 🎯 [FIXED URL PARAMETERS]: ஆப்ஸ் ஸ்கிரிப்ட் வாசிக்கும் வகையில் action=contact செட் செய்யப்பட்டுள்ளது!
             const finalUrl = `${googleScriptUrl}?action=contact&name=${encodeURIComponent(candName)}&email=${encodeURIComponent(candPhone)}&message=${encodeURIComponent(candMessage)}`;
