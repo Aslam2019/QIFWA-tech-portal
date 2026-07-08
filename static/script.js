@@ -208,7 +208,7 @@ if (careerForm) {
         const candPhone = document.getElementById("candPhone") ? document.getElementById("candPhone").value.trim() : "N/A";
         const appliedJob = document.getElementById("hiddenJobInput") ? document.getElementById("hiddenJobInput").value.trim() : "Job Application";
 
-        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzJsQxbw7NSg-w8_LyWY0xGnDGKTz8nfrFH5dACJ79cfBAAxJvVR6Za4r48VrXgyR8sSA/exec";
+        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzB_aZQncdmBdMAMHbp3NJPuN3gsjFCewr14FlLlNFn5om6ZZLctyzADx6PA516PafV/exec";
 
         if (!fileInput || fileInput.files.length === 0) {
             alert("Please upload your resume!");
@@ -443,7 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 customReceiver: "hr@qifawtechnologies.com" 
             };
 
-            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzJsQxbw7NSg-w8_LyWY0xGnDGKTz8nfrFH5dACJ79cfBAAxJvVR6Za4r48VrXgyR8sSA/exec";
+            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzB_aZQncdmBdMAMHbp3NJPuN3gsjFCewr14FlLlNFn5om6ZZLctyzADx6PA516PafV/exec";
 
             fetch(googleScriptUrl, {
                 method: "POST",
