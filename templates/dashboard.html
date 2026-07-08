@@ -14,14 +14,13 @@
         .logout-btn { background-color: #ef4444; margin-top: 15px; }
         .logout-btn:hover { background-color: #dc2626; }
         
-        /* டெலீட் லிஸ்ட் ஸ்டைல் */
         .job-list-admin { margin-top: 30px; background: #0f172a; padding: 15px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); }
         .job-item-admin { display: flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .job-item-admin:last-child { border-bottom: none; }
         .del-btn { background: #ef4444; color: white; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 13px; font-weight: 600; transition: 0.2s; display: inline-block; }
         .del-btn:hover { background: #b91c1c; transform: scale(1.05); }
         
-        /* ⏸️ ஹோல்டு பட்டனுக்கான புதிய ஸ்டைல் ப்ரோ */
+      
         .hold-btn { color: black; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; transition: 0.2s; display: inline-block; margin-right: 5px; }
         .hold-btn:hover { transform: scale(1.05); }
 
@@ -47,32 +46,6 @@
             <button type="submit">Publish Opportunity</button>
         </form>
 
-        <!-- <div class="job-list-admin">
-            <h3>Current Active List (Click ❌ to Delete)</h3>
-            <div id="adminProductsList">
-                {% if db_products %}
-                    {% for p in db_products %}
-                    <div class="job-item-admin" id="job-card-{{ p[3] }}" data-title="{{ p[0] }}" data-details="{{ p[1] }}" data-category="{{ p[2] }}">
-                        <div>
-                            <strong style="color: #e2e8f0; font-size: 16px;">{{ p[0] }}</strong>
-                            <span class="badge">{{ p[2] }}</span>
-                            <span id="hold-badge-{{ p[3] }}"></span>
-                            <br>
-                            <span style="font-size: 13px; color: #94a3b8; white-space: pre-line;">{{ p[1] }}</span>
-                        </div>
-                        <div style="display: flex; align-items: center;">
-                            <button type="button" onclick="toggleHold('{{ p[3] }}')" id="hold-btn-{{ p[3] }}" class="hold-btn" style="background-color: #ffc107; color: black; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-right: 8px; display: flex; align-items: center; gap: 4px;">
-                                <span>⏸️</span> Hold
-                            </button>
-                            <a href="/delete-product/{{ p[3] }}" class="del-btn" onclick="return confirm('Are you sure you want to delete this opportunity?')">Delete ❌</a>
-                        </div>
-                    </div>
-                    {% endfor %}
-                {% else %}
-                    <p style="color: #cbd5e1; text-align: center; font-size: 14px; margin: 15px 0;">No active custom opportunities found.</p>
-                {% endif %}
-            </div>
-        </div> -->
         <div class="job-list-admin">
             <h3>Current Active List (Click ❌ to Delete)</h3>
             <div id="adminProductsList">
@@ -105,7 +78,7 @@
 
     <script src="/static/script.js"></script>
     <script>
-        // அட்மின் பேஜ் லோடு ஆனதும் ஹோல்டு ஸ்டேட்டஸ்களை செக் பண்ணி அப்டேட் செய்யும் லோக்கல் ரன்னர்
+     
         document.addEventListener("DOMContentLoaded", () => {
             const oppList = JSON.parse(localStorage.getItem('opportunities')) || [];
             oppList.forEach(opp => {
@@ -118,8 +91,6 @@
                     if (holdBadge) holdBadge.innerHTML = `<span class="badge" style="background:rgba(239,68,68,0.2); color:#ef4444; border:1px solid #ef4444;">HOLD</span>`;
                 }
             });
-            
-            // ஒருவேளை லோக்கல் ஸ்டோரேஜ் சுத்தமா காலியா இருந்தா, பைதான் குடுக்குற முதல் 6 ஜாப்களை மெமரிக்கு ஏத்துறோம்
             if (!localStorage.getItem('opportunities')) {
                 const initialList = [];
                 document.querySelectorAll('.job-item-admin').forEach(item => {
