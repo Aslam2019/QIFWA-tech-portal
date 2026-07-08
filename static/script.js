@@ -190,7 +190,6 @@ if (themeToggle) {
 }
 
 
-// --- 6. Google Drive Direct Upload Logic (CORS Fixed & Auto-Success) ---
 const careerForm = document.getElementById("careerForm");
 
 if (careerForm) {
@@ -209,7 +208,7 @@ if (careerForm) {
         const candPhone = document.getElementById("candPhone") ? document.getElementById("candPhone").value.trim() : "N/A";
         const appliedJob = document.getElementById("hiddenJobInput") ? document.getElementById("hiddenJobInput").value.trim() : "Job Application";
 
-        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzLPbI45zS95sys9dkvpEAUElUV4tXLIO0NnKGiAoLBJRaF5qzU9kRntW7mqe2gHRvh1w/exec";
+        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbx4KZANKNK0uCJLanN-Byw3egKyuqp-qZkY_dHlLOWpKfmbJrUSKIo3J5xUfBRpT2zRQw/exec";
 
         if (!fileInput || fileInput.files.length === 0) {
             alert("Please upload your resume!");
@@ -271,9 +270,8 @@ if (careerForm) {
 }
 
 
-// =========================================================================
-// --- 7. [ஃப்ளாஸ்க் டேட்டாபேஸ் ಲಿಂಕ್ッド - அனிமேஷன் & பெர்ஃபெக்ட் அலைன்மென்ட்] ---
-// =========================================================================
+
+
 
 function injectAttractiveButtonStyles() {
     if (document.getElementById('animated-admin-btn-styles')) return;
@@ -350,7 +348,7 @@ function syncAdminHoldUI() {
         item.style.justifyContent = "space-between";
         item.style.alignItems = "center";
 
-        // 🎯 [மரண மாஸ் பிக்ஸ்]: 'job-card-123' லிருந்து 123 என்ற அசல் ID-ஐ மட்டும் எடுக்கிறோம்
+      
         const id = item.id.replace('job-card-', '');
         const holdBtn = document.getElementById(`hold-btn-${id}`);
         const holdBadge = document.getElementById(`hold-badge-${id}`);
@@ -361,7 +359,7 @@ function syncAdminHoldUI() {
             btnGroup.removeAttribute('style'); 
         }
 
-        // 🎯 [Title-ஐ தூக்கியாச்சு]: இனிமேல் டைட்டில் ஒரே மாதிரி இருந்தாலும் கன்பியூஸ் ஆகாது, ID மட்டும் தான் செக் பண்ணும்!
+     
         const storedJob = oppList.find(opp => String(opp.id) === String(id));
         
         if (holdBtn) {
@@ -399,8 +397,7 @@ window.toggleHold = function(id) {
         details = jobCard.getAttribute('data-details') || '';
         catBadge = jobCard.getAttribute('data-category') || '';
     }
-    
-    // 🎯 [இங்கேயும் ID மட்டும் தான்]: டைட்டில் மேட்ச் பார்க்குற கண்டிஷனை கம்ப்ளீட்டா தூக்கியாச்சு ப்ரோ!
+   
     let jobIndex = oppList.findIndex(opp => String(opp.id) === String(id));
     
     if (jobIndex === -1) {
@@ -420,10 +417,6 @@ window.toggleHold = function(id) {
     syncAdminHoldUI();
 };
 
-
-// =========================================================================
-// 🎯 --- 8. [காண்டாக்ட் ஃபார்ம் - ஃபோன் நம்பர் அப்டேட் லாஜிக்] ---
-// =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
     
@@ -450,7 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 customReceiver: "hr@qifawtechnologies.com" 
             };
 
-            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzLPbI45zS95sys9dkvpEAUElUV4tXLIO0NnKGiAoLBJRaF5qzU9kRntW7mqe2gHRvh1w/exec";
+            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbx4KZANKNK0uCJLanN-Byw3egKyuqp-qZkY_dHlLOWpKfmbJrUSKIo3J5xUfBRpT2zRQw/exec";
 
             fetch(googleScriptUrl, {
                 method: "POST",
