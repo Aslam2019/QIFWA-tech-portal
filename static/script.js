@@ -593,3 +593,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+// --- 8. Admin Page Load Logic (Automatically triggers alignment and colors) ---
+document.addEventListener("DOMContentLoaded", () => {
+    // அட்மின் பேஜ் லோடு ஆன உடனே கலர் மற்றும் அலைன்மென்ட் ஸ்டைல்களை அப்ளை செய்கிறது ப்ரோ!
+    if (document.querySelectorAll('.job-item-admin').length > 0) {
+        syncAdminHoldUI();
+    }
+});
