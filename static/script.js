@@ -190,6 +190,86 @@ if (themeToggle) {
 }
 
 
+// const careerForm = document.getElementById("careerForm");
+
+// if (careerForm) {
+//     careerForm.addEventListener("submit", function(e) {
+//         e.preventDefault(); 
+        
+//         const submitBtn = careerForm.querySelector("button[type='submit']");
+//         const originalBtnText = submitBtn.innerText;
+//         submitBtn.innerText = "Uploading... Please Wait...";
+//         submitBtn.disabled = true;
+
+//         const fileInput = document.getElementById("resumeFileInput");
+        
+//         const candName = document.getElementById("candName") ? document.getElementById("candName").value.trim() : "N/A";
+//         const candEmail = document.getElementById("candEmail") ? document.getElementById("candEmail").value.trim() : "N/A";
+//         const candPhone = document.getElementById("candPhone") ? document.getElementById("candPhone").value.trim() : "N/A";
+//         const appliedJob = document.getElementById("hiddenJobInput") ? document.getElementById("hiddenJobInput").value.trim() : "Job Application";
+
+//         const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzB_aZQncdmBdMAMHbp3NJPuN3gsjFCewr14FlLlNFn5om6ZZLctyzADx6PA516PafV/exec";
+
+//         if (!fileInput || fileInput.files.length === 0) {
+//             alert("Please upload your resume!");
+//             submitBtn.innerText = originalBtnText;
+//             submitBtn.disabled = false;
+//             return;
+//         }
+
+//         const file = fileInput.files[0];
+//         const reader = new FileReader();
+        
+//         reader.onload = function(event) {
+//             const payload = {
+//                 name: candName,
+//                 email: candEmail,
+//                 phone: candPhone,
+//                 appliedJob: appliedJob,
+//                 fileName: file.name,
+//                 fileData: event.target.result,
+//                 customReceiver: "hr@qifawtechnologies.com" 
+//             };
+
+//             fetch(googleScriptUrl, {
+//                 method: "POST",
+//                 mode: "no-cors",
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify(payload)
+//             })
+//             .then(() => {
+//                 alert("Application Submitted Successfully! 🎉");
+//                 careerForm.reset();
+//                 const jobModal = document.getElementById("jobModal");
+//                 if (jobModal) jobModal.style.display = "none";
+//             })
+//             .catch(error => {
+//                 console.error("CORS / Fetch Error:", error);
+//                 alert("Application Submitted Successfully! 🎉");
+//                 careerForm.reset();
+//                 const jobModal = document.getElementById("jobModal");
+//                 if (jobModal) jobModal.style.display = "none";
+//             })
+//             .finally(() => {
+//                 submitBtn.innerText = originalBtnText;
+//                 submitBtn.disabled = false;
+//             });
+//         };
+        
+//         reader.onerror = function() {
+//             console.error("FileReader Error");
+//             alert("Error reading file. Please try again.");
+//             submitBtn.innerText = originalBtnText;
+//             submitBtn.disabled = false;
+//         };
+
+//         reader.readAsDataURL(file);
+//     });
+// }
+
+// --- 6. Career Form Submission Logic (Fixed with correct URL & Action Parameters) ---
 const careerForm = document.getElementById("careerForm");
 
 if (careerForm) {
@@ -208,7 +288,8 @@ if (careerForm) {
         const candPhone = document.getElementById("candPhone") ? document.getElementById("candPhone").value.trim() : "N/A";
         const appliedJob = document.getElementById("hiddenJobInput") ? document.getElementById("hiddenJobInput").value.trim() : "Job Application";
 
-        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzB_aZQncdmBdMAMHbp3NJPuN3gsjFCewr14FlLlNFn5om6ZZLctyzADx6PA516PafV/exec";
+        // 🎯 [FIXED URL]: நீங்க எடுத்துட்டு வந்த கரக்ட்டான புது வெப் ஆப் யூஆர்எல் இங்க போட்டாச்சு ப்ரோ!
+        const googleScriptUrl = "https://script.google.com/macros/s/AKfycbx4KZANKNK0uCJLanN-Byw3egKyuqp-qZkY_dHlLOWpKfmbJrUSKIo3J5xUfBRpT2zRQw/exec";
 
         if (!fileInput || fileInput.files.length === 0) {
             alert("Please upload your resume!");
@@ -221,22 +302,19 @@ if (careerForm) {
         const reader = new FileReader();
         
         reader.onload = function(event) {
+            // 🎯 [FIXED PARAMETERS]: ஆப்ஸ் ஸ்கிரிப்ட்டுக்கு தேவையான வடிவில் டேட்டா கரக்ட்டா மாற்றப்பட்டுள்ளது!
+            const base64String = event.target.result.split(",")[1]; // Extract pure base64 data
+            
             const payload = {
-                name: candName,
-                email: candEmail,
-                phone: candPhone,
-                appliedJob: appliedJob,
-                fileName: file.name,
-                fileData: event.target.result,
-                customReceiver: "hr@qifawtechnologies.com" 
+                file: base64String,
+                filename: file.name
             };
 
-            fetch(googleScriptUrl, {
+            // URL-ல் action=career மற்றும் இதர விபரங்களை அனுப்பி வைக்கிறோம் ப்ero!
+            const finalUrl = `${googleScriptUrl}?action=career&name=${encodeURIComponent(candName)}&email=${encodeURIComponent(candEmail)}&phone=${encodeURIComponent(candPhone)}&title=${encodeURIComponent(appliedJob)}&category=Career`;
+
+            fetch(finalUrl, {
                 method: "POST",
-                mode: "no-cors",
-                headers: {
-                    "Content-Type": "application/json"
-                },
                 body: JSON.stringify(payload)
             })
             .then(() => {
@@ -246,7 +324,7 @@ if (careerForm) {
                 if (jobModal) jobModal.style.display = "none";
             })
             .catch(error => {
-                console.error("CORS / Fetch Error:", error);
+                console.error("Fetch Error:", error);
                 alert("Application Submitted Successfully! 🎉");
                 careerForm.reset();
                 const jobModal = document.getElementById("jobModal");
@@ -268,7 +346,6 @@ if (careerForm) {
         reader.readAsDataURL(file);
     });
 }
-
 
 
 
@@ -417,6 +494,60 @@ window.toggleHold = function(id) {
     syncAdminHoldUI();
 };
 
+// document.addEventListener("DOMContentLoaded", () => {
+//     const contactForm = document.getElementById("contactForm");
+    
+//     if (contactForm) {
+//         contactForm.addEventListener("submit", function(e) {
+//             e.preventDefault(); 
+            
+//             const submitBtn = contactForm.querySelector("button[type='submit']");
+//             const originalText = submitBtn.innerText;
+//             submitBtn.innerText = "Sending Message...";
+//             submitBtn.disabled = true;
+
+//             const nameEl = document.getElementById("contactName");
+//             const phoneEl = document.getElementById("contactPhone"); 
+//             const messageEl = document.getElementById("contactMessage");
+
+//             const payload = {
+//                 name: nameEl ? nameEl.value.trim() : "No Name Found",
+//                 email: "Not Provided", 
+//                 appliedJob: "CONTACT_FORM_MESSAGE", 
+//                 phone: phoneEl ? phoneEl.value.trim() : "No Phone Found", 
+//                 fileName: "No Attachment",
+//                 fileData: messageEl ? messageEl.value.trim() : "No Message Content Provided",
+//                 customReceiver: "hr@qifawtechnologies.com" 
+//             };
+
+//             const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzB_aZQncdmBdMAMHbp3NJPuN3gsjFCewr14FlLlNFn5om6ZZLctyzADx6PA516PafV/exec";
+
+//             fetch(googleScriptUrl, {
+//                 method: "POST",
+//                 mode: "no-cors",
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify(payload)
+//             })
+//             .then(() => {
+//                 alert("Message Sent Successfully! ✉️");
+//                 contactForm.reset();
+//             })
+//             .catch(error => {
+//                 console.error("Fetch error:", error);
+//                 alert("Message Sent Successfully! ✉️");
+//                 contactForm.reset();
+//             })
+//             .finally(() => {
+//                 submitBtn.innerText = originalText;
+//                 submitBtn.disabled = false;
+//             });
+//         });
+//     }
+// });
+
+// --- 7. Contact Form Submission Logic (Fixed with correct URL & Action Parameters) ---
 document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
     
@@ -433,25 +564,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const phoneEl = document.getElementById("contactPhone"); 
             const messageEl = document.getElementById("contactMessage");
 
-            const payload = {
-                name: nameEl ? nameEl.value.trim() : "No Name Found",
-                email: "Not Provided", 
-                appliedJob: "CONTACT_FORM_MESSAGE", 
-                phone: phoneEl ? phoneEl.value.trim() : "No Phone Found", 
-                fileName: "No Attachment",
-                fileData: messageEl ? messageEl.value.trim() : "No Message Content Provided",
-                customReceiver: "hr@qifawtechnologies.com" 
-            };
+            const candName = nameEl ? nameEl.value.trim() : "No Name Found";
+            const candPhone = phoneEl ? phoneEl.value.trim() : "No Phone Found";
+            const candMessage = messageEl ? messageEl.value.trim() : "No Message Content";
 
-            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbzB_aZQncdmBdMAMHbp3NJPuN3gsjFCewr14FlLlNFn5om6ZZLctyzADx6PA516PafV/exec";
+            // 🎯 [FIXED URL]: காண்டாக்ட் ஃபார்மிற்கும் கரக்ட்டான புது யூஆர்எல் இங்க போட்டாச்சு ப்ரோ!
+            const googleScriptUrl = "https://script.google.com/macros/s/AKfycbx4KZANKNK0uCJLanN-Byw3egKyuqp-qZkY_dHlLOWpKfmbJrUSKIo3J5xUfBRpT2zRQw/exec";
 
-            fetch(googleScriptUrl, {
-                method: "POST",
-                mode: "no-cors",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(payload)
+            // 🎯 [FIXED URL PARAMETERS]: ஆப்ஸ் ஸ்கிரிப்ட் வாசிக்கும் வகையில் action=contact செட் செய்யப்பட்டுள்ளது!
+            const finalUrl = `${googleScriptUrl}?action=contact&name=${encodeURIComponent(candName)}&email=${encodeURIComponent(candPhone)}&message=${encodeURIComponent(candMessage)}`;
+
+            fetch(finalUrl, {
+                method: "POST"
             })
             .then(() => {
                 alert("Message Sent Successfully! ✉️");
